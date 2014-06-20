@@ -18,6 +18,7 @@
 			<web-resource-name>Public Area</web-resource-name>
 			<url-pattern>/img/*</url-pattern>
 			<url-pattern>/css/*</url-pattern>
+			<url-pattern>/js/*</url-pattern>
 		</web-resource-collection>
 	</security-constraint>
 
