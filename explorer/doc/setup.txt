@@ -1,0 +1,36 @@
+get "win x86-64" postgresql binaries in zip file format from:
+http://www.enterprisedb.com/products-services-training/pgbindownload
+
+
+psql -p 5439 -U postgres
+
+postgres=# alter user postgres with password 'welcome1';
+
+in $PGDATA\pg_hba.conf
+change all connection configuration metods from 'trust' to 'md5' (without quotes).
+
+connect using pgAdmin3
+
+create login role for application admin user
+
+CREATE ROLE "playgroundAdmin" LOGIN ENCRYPTED PASSWORD 'md5e7c09cacc97cf45962eabd911bcc1292'
+  SUPERUSER CREATEDB CREATEROLE REPLICATION
+   VALID UNTIL 'infinity';
+
+create new tablespace owned by playgroundAdmin
+d:\Data\Projects\Playground\Tools\postgresql-9.3.4-x64\data\pg_tblspc\playground
+
+CREATE TABLESPACE tblspc_playground
+  OWNER "playgroundAdmin"
+  LOCATION E'd:\\Data\\Projects\\Playground\\Tools\\postgresql-9.3.4-x64\\data\\pg_tblspc\\playground';
+
+  
+create new database:
+CREATE DATABASE playground
+  WITH ENCODING='WIN1252'
+       OWNER="playgroundAdmin"
+       TEMPLATE=template1
+       CONNECTION LIMIT=-1
+       TABLESPACE=tblspc_playground;
+
+ follow liezeilstra.bogspot.com
