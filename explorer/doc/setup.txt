@@ -34,3 +34,26 @@ CREATE DATABASE playground
        TABLESPACE=tblspc_playground;
 
  follow liezeilstra.bogspot.com
+
+ tables:
+ CREATE TABLE jaas.users
+(
+  user_name character varying(30) NOT NULL,
+  user_pass character varying(255) NOT NULL,
+  CONSTRAINT pk_users PRIMARY KEY (user_name)
+);
+
+create table jaas.user_details
+(
+  user_name character varying(30) NOT NULL,
+  display_name character varying(255) NOT NULL,
+  CONSTRAINT pk_user_details PRIMARY KEY (user_name),
+  CONSTRAINT fk_udl_usr FOREIGN KEY (user_name) REFERENCES jaas.users (user_name)
+);
+
+CREATE TABLE jaas.user_roles
+(
+  user_name character varying(15) NOT NULL,
+  role_name character varying(15) NOT NULL,
+  CONSTRAINT pk_user_roles PRIMARY KEY (user_name, role_name)
+);
