@@ -13,16 +13,14 @@
 		<role-name>Explorer User</role-name>
 	</security-role>
 
-    <security-constraint>
+	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>Public Area</web-resource-name>
-			<url-pattern>/img/*</url-pattern>
-			<url-pattern>/css/*</url-pattern>
-			<url-pattern>/js/*</url-pattern>
+			<url-pattern>/resources/*</url-pattern>
 		</web-resource-collection>
 	</security-constraint>
 
-    <security-constraint>
+	<security-constraint>
 		<web-resource-collection>
 			<web-resource-name>Secure Area</web-resource-name>
 			<url-pattern>/*</url-pattern>
@@ -35,7 +33,7 @@
 	<security-role>
 		<role-name>admin_role</role-name>
 	</security-role>
-	
+
 	<login-config>
 		<auth-method>FORM</auth-method>
 		<form-login-config>

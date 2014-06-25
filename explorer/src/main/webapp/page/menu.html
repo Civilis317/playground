@@ -1,0 +1,38 @@
+<script>
+    $(document).ready(function() {
+            $.get('getDisplayName', function(responseText) {
+                $('#displayname').text(responseText);
+            });
+    });
+</script>
+
+<nav class="navbar navbar-default" role="navigation">
+	<div>
+		<ul class="nav navbar-nav">
+			<li class="active"><a href="#">iOS</a></li>
+			<li><a href="#">SVN</a></li>
+			<li class="dropdown"><a href="#" class="dropdown-toggle"
+				data-toggle="dropdown"> Java <b class="caret"></b>
+			</a>
+				<ul class="dropdown-menu">
+					<li><a href="#">jmeter</a></li>
+					<li><a href="#">EJB</a></li>
+					<li><a href="#">Jasper Report</a></li>
+					<li class="divider"></li>
+					<li><a href="#">Separated link</a></li>
+					<li class="divider"></li>
+					<li><a href="#">One more separated link</a></li>
+				</ul>
+			</li>
+		</ul>
+		<ul class="nav navbar-nav" style="float: right">
+			<li class="dropdown"><a href="#" class="dropdown-toggle"
+				data-toggle="dropdown"><div id="displayname"></div><b class="caret"></b>
+			</a>
+				<ul class="dropdown-menu">
+					<li><a href="javascript:logout();">logout</a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+</nav>
