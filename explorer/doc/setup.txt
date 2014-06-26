@@ -57,3 +57,10 @@ CREATE TABLE jaas.user_roles
   role_name character varying(15) NOT NULL,
   CONSTRAINT pk_user_roles PRIMARY KEY (user_name, role_name)
 );
+
+
+JVM arguments
+ -Dlog4j.debug=true
+ -Dlog4j.config.file="path_to_/explorer/conf/log4j.properties"
+ -Dexplorer.properties.path="path_to_/conf/explorer.properties"
+ 
